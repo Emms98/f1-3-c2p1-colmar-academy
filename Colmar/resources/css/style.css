@@ -3,7 +3,7 @@ html {
   font-size: 14px;
   font-family: Helvetica;
   letter-spacing: 0.025rem;
-  width: 1250px;
+  max-width: 1250px;
   margin: auto;
 }
 
@@ -43,6 +43,12 @@ p {
 
 .right {
   width: 40%;
+}
+
+@media only screen and (max-width: 480px) {
+  html {
+    max-width: 400px;
+  }
 }
 
 /*Panels*/
@@ -86,7 +92,6 @@ p {
 #top img {
   margin-top: 0px;
 }
-
 /*Header*/
 ul {
 display: flex;
@@ -111,13 +116,19 @@ display: flex;
   margin: 8px;
 }
 
-.logo.container {
+.navigation li:hover {
+  color: steelblue;
+  font-weight: bold;
+  transition-duration: 0.2s;
+}
+
+.icons.container {
   align-items: center;
   margin-left: 24px;
   height: 32px;
 }
 
-.logo p {
+.icons p {
   text-transform: uppercase;
   margin: 0;
 }
@@ -129,6 +140,25 @@ display: flex;
 #grey {
   color: grey;
   font-weight: 100;
+}
+
+@media only screen and (min-width: 480px) {
+  .mobile {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .navigation,
+  .icons p {
+    display: none;
+  }
+
+  .icons.container {
+    margin: 24px;
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 
 /*Banner*/
@@ -166,9 +196,42 @@ display: flex;
   width: 85%;
 }
 
+.cta:hover {
+  background-color: steelblue;
+  transition-duration:0.25s;
+}
+
+@media only screen and (max-width: 480px) {
+  .banner.container {
+    flex-direction: column;
+  }
+
+  .banner .left,
+  .banner .right {
+    width: 100%;
+    margin: 0;
+  }
+
+  .banner .right .text {
+    width: 100%;
+    margin: 32px 16px;
+  }
+
+  .cta {
+    width: 100%;
+    background-color: rgb(140,140,140);
+    color: white;
+    font-weight: bold;
+  }
+
+  .banner .left img {
+    margin: 0;
+  }
+}
+
 /*Overview*/
 .panel-cell a {
-  color: rgb(99, 139, 204);
+  color: steelblue;
 }
 
 .overview .right {
@@ -186,6 +249,49 @@ display: flex;
 
 #guest {
   background-color: rgb(224,224,224);
+}
+
+@media only screen and (max-width: 480px) {
+  .overview .left {
+    display: none;
+  }
+
+  .overview .right {
+    width: 100%;
+    margin: 16px;
+    margin-bottom: 32px;
+    border: 0;
+  }
+
+  .overview .panel-cell.container {
+    flex-direction: column;
+    margin: 0;
+    margin-bottom: 64px;
+  }
+
+  .overview #top,
+  #campus {
+    border: 0;
+  }
+
+  .overview .panel-cell img {
+    width: 100%;
+    margin: 0px;
+    margin-bottom: 16px;
+  }
+
+  .overview .panel-cell {
+    align-items: flex-start;
+  }
+
+  .overview .panel-cell .text {
+    margin: 0px;
+  }
+
+  #guest {
+    background-color: inherit;
+    margin-bottom: 0;
+  }
 }
 
 /*Courses*/
@@ -224,6 +330,39 @@ display: flex;
   margin-bottom: 24px;
 }
 
+@media only screen and (max-width: 480px) {
+  .start-learning {
+    background-color: inherit;
+  }
+
+  .start-learning h1 {
+    margin: 0;
+    margin-top: 32px;
+  }
+
+  .course .text p,
+  .course img {
+    display: none;
+  }
+
+  .topics.container {
+    margin: 16px;
+    margin-bottom: 24px;
+  }
+
+  .course.container {
+    margin: 0;
+    margin-bottom: 8px;
+    background-color: rgb(224, 224, 224);
+    width: 100%;
+  }
+
+  .course .text {
+    margin: 24px 16px;
+    width: 100%;
+  }
+}
+
 /*Exhibit*/
 .thesis.container {
   flex-direction: column;
@@ -252,6 +391,29 @@ display: flex;
   border-bottom: 1px solid rgb(224,224,224);
 }
 
+@media only screen and (max-width: 480px) {
+  .thesis-content .right {
+    display: none;
+  }
+
+  .thesis-content .left {
+    padding: 0px;
+    width: 100%;
+    margin: 0px;
+  }
+
+  video {
+    width: 100%;
+    height: 230px;
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+
+  .thesis-content .left .text {
+    display: none;
+  }
+}
+
 /*Footer*/
 .footer {
   margin: 16px 24px;
@@ -261,4 +423,11 @@ display: flex;
 
 .legal span {
   margin-left: 10px;
+}
+
+@media only screen and (max-width: 480px) {
+  .legal {
+    display: none;
+    margin: 16px 0;
+  }
 }
